@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UiModule } from './ui/ui.module';
+import { DeezerModule } from './deezer/deezer.module';
+
+import {HttpClientModule} from '@angular/common/http';
+import { ServicioService } from './server/servicio.service';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +16,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UiModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
